@@ -66,6 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                             );
                         }
                 );
-        http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class); // execute the filter before navigating req to controllers
+        // add filter jwtTokenFilter (Custom Filter) before the UsernamePasswordAuthenticationFilter (from Spring Security).
+        http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }
